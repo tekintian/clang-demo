@@ -1,0 +1,2 @@
+file print
+file puts test for c language
