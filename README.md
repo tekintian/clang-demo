@@ -139,5 +139,3 @@ gcc hello.o -o hello.exe  // 连接
 
 
 
-
-
