@@ -2,6 +2,7 @@
   "cmake.configureSettings": {
     "CMAKE_TOOLCHAIN_FILE": "/usr/local/Cellar/vcpkg/2020.11-1/libexec/scripts/buildsystems/vcpkg.cmake"
   },
+  "editor.formatOnSave": true,
   "files.associations": {
     "数的阶乘.C": "cpp",
     "num_ppluse.C": "cpp"
