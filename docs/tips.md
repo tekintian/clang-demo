@@ -1,4 +1,4 @@
-# Clang FAQ
+# Clang Tips
 
 
 
