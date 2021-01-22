@@ -24,6 +24,42 @@ https://marketplace.visualstudio.com/items?itemName=hars.CppSnippets
 
 ## mac c/c++ development config
 
+需要先安装xcode
+
+2中方式获取includePath,  第一种 直接使用xcode中的include;  第二种 执行 xcode-select --install 安装命令行工具环境
+
+
+
+- 直接使用xcode中的include
+
+~~~json
+"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include",
+"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1",
+"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
+~~~
+
+
+
+- instal xcode and exec xcode-select --install
+
+~~~shell
+xcode-select --install
+~~~
+
+~~~json
+"/Library/Developer/CommandLineTools/usr/include/c++/v1",
+"/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include",
+"/Library/Developer/CommandLineTools/usr/include",
+"/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
+~~~
+
+
+
+
+
+- VSCode 配置文件 ( 没有则自己手动创建,否则头文件会无法找到)
+
 .vscode/c_cpp_properties.json
 
 ```json
@@ -77,6 +113,23 @@ brew install vcpkg
   }
 }
 ```
+
+
+
+## c compile 
+
+- C源码编译的4个步骤
+
+~~~shell
+gcc -E hello.c -o hello.i  // 预处理  
+gcc -S hello.i -o hello.s // 编译 将 C编译为汇编语言
+gcc -c hello.s -o hello.o  // 汇编 将汇编语言编译为机器语言
+gcc hello.o -o hello.exe  // 连接
+~~~
+
+
+
+
 
 
 
